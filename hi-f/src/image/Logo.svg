@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="473" height="127" viewBox="0 0 473 127">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 72px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #fff;
+        font-family: "Lucida Bright";
+      }
+
+      .cls-2 {
+        font-size: 16px;
+      }
+    </style>
+  </defs>
+  <g id="Монтажная_область_1" data-name="Монтажная область 1">
+    <text id="HiForeigner" class="cls-1" x="38.001" y="86.249">HiForeigner</text>
+    <text id="Native" class="cls-2" x="332.999" y="99.251">Native</text>
+  </g>
+</svg>
