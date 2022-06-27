@@ -48,4 +48,5 @@ line-height: 0%;
 color: rgba(255, 255, 255, 0.7);
 height: 40px;
 width: auto;
+pointer-events: none;
 `;
