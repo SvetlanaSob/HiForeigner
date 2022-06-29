@@ -42,8 +42,7 @@ import {
   DivMinitextAboutBottom2,
   DivBlocks,
   DivQBlock,
-  DivButtonsBlockSC,
-  DivButtonSC,
+
 } from "../../styles/mainpage.styles";
 import Post from "./Post";
 import arrayPosts from "./arrayPosts";

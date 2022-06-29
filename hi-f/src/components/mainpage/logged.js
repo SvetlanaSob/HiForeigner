@@ -6,10 +6,8 @@ import {
   DivRightSearchBlockSC,
   DivSearchBlocksWrapCS,
   DivSearchMainCS,
-  DivSignMainCS,
   DivTextLanguageSC,
   DivTextSearchSC,
-  DivWrapMainCS,
   DivSelectTopSC,
   DivSelectBottomSC,
   DivOptionLangs,
@@ -20,7 +18,6 @@ import {
   DivButtonsBlockSC,
   DivButtonSC,
   DivWrapMainLCS,
-  DivImgDot,
 } from "../../styles/mainpage.styles";
 import Post from "./Post";
 import BoxCreatePost from "./BoxCreatePost";
