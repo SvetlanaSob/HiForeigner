@@ -5,8 +5,8 @@ const Header = (props) => {
   return (
     <DivBoxHeaderSC>
     <ButtonHeaderLangSC >Язык:Русский</ButtonHeaderLangSC>
-    <ImgLogoHeaderSC ></ImgLogoHeaderSC>
-    <ButtonHeaderSignInSC >Вход</ButtonHeaderSignInSC>
+    <ImgLogoHeaderSC to="/" ></ImgLogoHeaderSC>
+    <ButtonHeaderSignInSC to="/signin">Вход</ButtonHeaderSignInSC>
   </DivBoxHeaderSC>
   )
 }

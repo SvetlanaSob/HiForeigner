@@ -5,10 +5,16 @@ import LadySignIn from "../image/woman.png";
 import Speaks from "../image/speaks.png";
 import Chats from "../image/chats.png";
 import Phone from "../image/phone.png";
+import {GoPrimitiveDot} from 'react-icons/go';
+import Dots from "../image/dots.png";
 
 export const DivWrapMainCS = styled.div`
   display: grid;
-  grid-template-rows: 900px 1300px 1300px 1300px;
+  grid-template-rows: 900px 900px 1300px 1300px;
+`;
+export const DivWrapMainLCS = styled.div`
+  display: grid;
+  grid-template-rows: 900px 900px;
 `;
 export const DivSearchMainCS = styled.div`
   background-image: url(${MainBack});
@@ -34,7 +40,7 @@ export const DivSearchBlocksWrapCS = styled.div`
   /* position: relative; */
   margin: 0 auto;
   margin-top: 100px;
-  //border: 2px solid yellow;
+ // border: 2px solid yellow;
 `;
 export const DivLeftSearchBlockSC = styled.div`
   z-index: 2;
@@ -130,6 +136,31 @@ export const DivSelectBottomSC = styled.select`
     opacity: 90%;
   }
 `;
+export const DivSelectBottom2SC = styled.select`
+  z-index: 2;
+  display: grid;
+  position: absolute;
+  box-sizing: border-box;
+  width: 353.78px;
+  height: 45.35px;
+  justify-self: CENTER;
+  opacity: 100%;
+  background: WHITE;
+  border: 2.9311px solid rgba(0, 0, 0, 0.5);
+  border-radius: 12.0925px;
+  margin-left: 1045px;
+  margin-top: 230px;
+  text-align: center;
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26.1731px;
+  line-height: 31px;
+  /* border: 2px solid yellow; */
+  :hover {
+    opacity: 90%;
+  }
+`;
 export const DivSelectTopSC = styled.select`
   z-index: 2;
   display: grid;
@@ -156,12 +187,47 @@ export const DivSelectTopSC = styled.select`
     opacity: 90%;
   }
 `;
+export const DivSelectTop2SC = styled.select`
+  z-index: 2;
+  display: grid;
+  position: absolute;
+  box-sizing: border-box;
+  justify-self: center;
+
+  width: 353.78px;
+  height: 45.35px;
+  opacity: 100%;
+  margin-top: 140px;
+  margin-left: 1045px;
+  background: WHITE;
+  border: 2.9311px solid rgba(0, 0, 0, 0.5);
+  border-radius: 12.0925px;
+  text-align: center;
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 26.1731px;
+  line-height: 31px;
+  /* border: 2px solid yellow; */
+  :hover {
+    opacity: 90%;
+  }
+`;
 export const DivOptionLangs = styled.option`
   z-index: 2;
   font-family: "Playfair Display";
   font-style: normal;
   font-weight: 400;
   font-size: 13.1731px;
+  /* identical to box height */
+  background-color: white;
+`;
+export const DivOptionLangs2 = styled.option`
+  z-index: 2;
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 23.1731px;
   /* identical to box height */
   background-color: white;
 `;
@@ -187,23 +253,28 @@ export const DivSearchSC = styled.input`
   :hover {
     opacity: 90%;
   }
+  :focus {
+    
+    border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+    outline: none;
+  }
 `;
 export const DivRecentQMainCS = styled.div`
   z-index: 1;
-  box-shadow: 0px -10px 40px 50px #fbfbfb;
+  box-shadow: 0px -10px 40px 50px #efefef;
   opacity: 99%;
-  background-color: #fbfbfb;
+  background-color: #efefef;
 `;
 export const DivRecQBlockCS = styled.div`
   z-index: 2;
   display: grid;
   width: 80vw;
   max-width: 1102px;
-  height: 1100px;
+  height: 100px;
   /* position: relative; */
   margin: 0 auto;
   margin-top: 15px;
-  border: 2px solid blue;
+  //border: 2px solid blue;
 `;
 export const DivRecQText = styled.h1`
   pointer-events: none;
@@ -218,6 +289,7 @@ export const DivRecQText = styled.h1`
   width: 500px;
   height: 50px;
   margin-right: 280px;
+ 
   /* identical to box height, or 0px */
   color: #000000;
   //border: 2px solid red;
@@ -286,6 +358,20 @@ export const ImgBlockSignIn = styled.div`
     margin-left: 65px;
   }
 `;
+export const DivDots = styled.div`
+  z-index: 2;
+  background-image: url(${Dots});
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  width: 100px;
+  background-size: 100%;
+
+  /* position: relative; */
+ // border: 2px solid red;
+margin-top:-110px;
+ margin-left: 650px;
+`;
 export const DivSignInTextSC = styled.input`
   z-index: 3;
   display: grid;
@@ -296,6 +382,46 @@ export const DivSignInTextSC = styled.input`
   width: 506.59px;
   height: 46.35px;
   margin-top: 120px;
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30.1731px;
+  line-height: 31px;
+  /* border: 2px solid yellow; */
+  background: #ffffff;
+  border: 1.9311px solid rgba(0, 0, 0, 0.5);
+  border-radius: 16.0925px;
+  transition: 0.1s;
+  :hover {
+    background: #ededed;
+  }
+  ::placeholder {
+    font-family: "Lusitana";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 0%;
+    /* identical to box height, or 0px */
+    text-align: center;
+    color: rgba(0, 0, 0);
+    opacity: 70%;
+  }
+  :focus {
+    border: none;
+    border-bottom: 5px solid rgba(252, 180, 71, 0.86);
+    outline: none;
+  }
+`;
+export const DivSignInText12SC = styled.input`
+  z-index: 3;
+  display: grid;
+  position: absolute;
+  box-sizing: border-box;
+  justify-self: center;
+  opacity: 100%;
+  width: 506.59px;
+  height: 46.35px;
+  margin-top: 90px;
   font-family: "Playfair Display";
   font-style: normal;
   font-weight: 400;
@@ -366,7 +492,87 @@ export const DivSignInText2SC = styled.input`
     outline: none;
   }
 `;
-export const DivSignupWordSC = styled.h1`
+export const DivSignInText22SC = styled.input`
+  z-index: 3;
+  display: grid;
+  position: absolute;
+  box-sizing: border-box;
+  justify-self: center;
+  opacity: 100%;
+  width: 506.59px;
+  height: 46.35px;
+  margin-top: 180px;
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30.1731px;
+  line-height: 31px;
+  /* border: 2px solid yellow; */
+  background: #ffffff;
+  border: 1.9311px solid rgba(0, 0, 0, 0.5);
+  border-radius: 16.0925px;
+  transition: 0.1s;
+  :hover {
+    background: #ededed;
+  }
+  ::placeholder {
+    font-family: "Lusitana";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 0%;
+    /* identical to box height, or 0px */
+    text-align: center;
+    color: rgba(0, 0, 0);
+    opacity: 70%;
+  }
+  :focus {
+    border: none;
+    border-bottom: 5px solid rgba(252, 180, 71, 0.86);
+    outline: none;
+  }
+`;
+export const DivSignInText3SC = styled.input`
+  z-index: 3;
+  display: grid;
+  position: absolute;
+  box-sizing: border-box;
+  justify-self: center;
+  opacity: 100%;
+  width: 506.59px;
+  height: 46.35px;
+  margin-top: 270px;
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30.1731px;
+  line-height: 31px;
+  /* border: 2px solid yellow; */
+  background: #ffffff;
+  border: 1.9311px solid rgba(0, 0, 0, 0.5);
+  border-radius: 16.0925px;
+  transition: 0.1s;
+  :hover {
+    background: #ededed;
+  }
+  ::placeholder {
+    font-family: "Lusitana";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 0%;
+    /* identical to box height, or 0px */
+    text-align: center;
+    color: rgba(0, 0, 0);
+    opacity: 70%;
+  }
+  :focus {
+    border: none;
+    border-bottom: 5px solid rgba(252, 180, 71, 0.86);
+    outline: none;
+  }
+`;
+export const DivSignupWordSC = styled(Link)`
   z-index: 3;
   width: auto;
   display: grid;
@@ -378,12 +584,13 @@ export const DivSignupWordSC = styled.h1`
   height: 25px;
   justify-self: center;
   margin-top: -140px;
+  text-decoration: none;
   /* identical to box height, or 0px */
   color: #ffffff;
   //border: 2px solid RED;
   cursor: pointer;
 `;
-export const DivSigninWordSC = styled.button`
+export const DivSigninWordSC = styled(Link)`
   z-index: 3;
   width: auto;
   display: grid;
@@ -397,6 +604,7 @@ export const DivSigninWordSC = styled.button`
   margin-top: -200px;
   background: none;
   border: none;
+  text-decoration: none;
   /* identical to box height, or 0px */
   color: #ffffff;
   //border: 2px solid RED;
@@ -625,4 +833,128 @@ display: grid;
  margin-top:300px;
 
  
+`;
+export const DivQBlock = styled.div`
+  // border: 2px solid RED;
+ width: auto;
+ height: 300px;
+ display: grid;
+  grid-template-rows: repeat(auto-fit, max-content);
+  gap: 20px;
+  width: 80vw;
+  max-width: 1102px;
+  /* position: relative; */
+  margin: 0 auto;
+  margin-top: 15px;
+ 
+
+`;
+
+export const DivButtonsBlockSC= styled.div`
+z-index: 2;
+  // border: 2px solid RED;
+ display: grid;
+grid-template-columns: 50px 50px;
+grid-gap: 70px;
+justify-self: end;
+margin-left: 65px;
+width: 340px;
+margin-top: 20px;
+height: 70px;
+  /* position: relative; */
+`;
+export const DivButtonSC = styled(GoPrimitiveDot)`
+z-index: 2;
+ // border: 2px solid blue;
+  color: black;
+  width: 70px;
+  height: 70px;
+
+   cursor: pointer;
+  color: ${(p) => (p.isActive ? 'black;' : 'white')};;
+`;
+
+export const DivBoxCreateQSC = styled.div `
+ width: 550px;
+  height: 380px;
+  display: grid;
+  grid-template-rows: 180px 30px;
+  gap: 20px;
+max-width: 550px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+ // border: 2px solid black;
+`;
+
+
+
+export const TextAreaCreateQSC = styled.textarea `
+    background: initial;
+    border-radius: 10px;
+ 
+  border: 1px solid black;
+  border-bottom: 1px solid rgb(121, 66, 95);
+  color:black;
+  min-height:150px;
+  max-width: 500px;
+  font-family: 'Source Code Pro', monospace;
+  :focus{
+    
+    border-bottom: 5px solid rgba(252, 180, 71, 0.86);
+    outline: none;
+  }
+  ::placeholder{
+    color:black;
+    font-size: 24px;
+    
+    text-align: center;
+  }
+`;
+export const ButtonQSC = styled.button `
+   background: black;
+  border: none;
+  color:rgb(230, 245, 255);
+  border-radius: 15px;
+  cursor: pointer;
+  :hover{
+   opacity: 80%;
+  }
+  :active{
+    background:black;
+    color:red;
+    opacity: 100%;
+  }
+`;
+export const DivImgDot = styled(GoPrimitiveDot)`
+color:${(p) => (p.isActive ? 'black;' : 'white')};
+`;
+
+export const DivBoxQPostP = styled.div`
+ z-index: 1;
+width: 800px;
+  height: fit-content;
+  display: grid;
+  gap: 20px;
+justify-self: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+ 
+  background: #FBFBFB;
+border-radius: 30px;
+color: #000000;
+  //border: 2px solid black;
+p{
+  z-index: 1;
+  margin-left: 30px;
+  margin-right: 100px;
+  text-align: left;
+  font-family: 'Playfair Display';
+font-style: normal;
+font-weight: 400;
+font-size: 32px;
+line-height: 30px;
+/* or 94% */
+}
 `;

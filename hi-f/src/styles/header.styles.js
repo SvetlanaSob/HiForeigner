@@ -26,18 +26,20 @@ export const ButtonHeaderLangSC = styled.button`
   cursor: pointer;
   
 `;
-export const ButtonHeaderSignInSC = styled.button`
+export const ButtonHeaderSignInSC = styled(Link)`
   font-family: 'Source Code Pro', monospace;
   background: initial;
   border: none; 
+ margin-top: 60px;
   font-size: 20px;
+  text-decoration:none;
   color: rgb(230, 245, 255);
  // border: 1px solid red;
   cursor: pointer;
 `;
 
 
-export const ImgLogoHeaderSC = styled.div`
+export const ImgLogoHeaderSC = styled(Link)`
  // border: 1px solid red;
   background-image: url(${Logo});
   width: 100%;

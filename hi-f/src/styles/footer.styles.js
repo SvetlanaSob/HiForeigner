@@ -22,6 +22,8 @@ export const DivLinksSC = styled.div`
 //border: 1px solid red;
 display: grid;
 grid-template-columns: auto auto auto auto;
+justify-content: center;
+grid-gap: 100px;
 `;
 
 export const LinkFooterSC = styled(Link)`
@@ -31,8 +33,9 @@ font-style: normal;
 font-size: 32px;
 line-height: 30px;
 //border: 1px solid blue;
-height: 60px;
-width: auto;
+height: 30px;
+
+width: max-content;
 /* identical to box height, or 0px */
 color: #FFFFFF;
 `;

@@ -4,6 +4,8 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+// var mongoose = require('mongoose');
+// mongoose.connect('mongodb://localhost/hf');
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

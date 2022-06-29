@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   DivAboutUsMainCS,
   DivBottomSearchBlockSC,
@@ -41,30 +41,42 @@ import {
   DivMinitextAboutBottom,
   DivMinitextAboutBottom2,
   DivBlocks,
+  DivQBlock,
+  DivButtonsBlockSC,
+  DivButtonSC,
 } from "../../styles/mainpage.styles";
+import Post from "./Post";
+import arrayPosts from "./arrayPosts";
 
-const Mainpage = () => {
+
+const Mainpage = (props) => {
+  const [posts, getPosts] = useState([])
+  useEffect(() => {
+    getPosts(arrayPosts)
+}, [])
+
+
   return (
     <DivWrapMainCS>
       <DivSearchMainCS>
         <DivSearchBlocksWrapCS>
           <DivLeftSearchBlockSC>
-            <DivSearchSC type="text"></DivSearchSC>
-            <DivTextSearchSC>SEARCH</DivTextSearchSC>
+          <DivSearchSC type="text"></DivSearchSC>
+          <DivTextSearchSC>SEARCH</DivTextSearchSC>
           </DivLeftSearchBlockSC>
           <DivTextLanguageSC>LANGUAGE</DivTextLanguageSC>
           <DivRightSearchBlockSC>
-            <DivSelectTopSC>
-              <DivOptionLangs>Изучаю</DivOptionLangs>
-              <DivOptionLangs value="1">Русский</DivOptionLangs>
-              <DivOptionLangs value="2">Английский</DivOptionLangs>
-            </DivSelectTopSC>
-            <DivSelectBottomSC>
-              <DivOptionLangs>Владею</DivOptionLangs>
-              <DivOptionLangs value="1">Русский</DivOptionLangs>
-              <DivOptionLangs value="2">Английский</DivOptionLangs>
-            </DivSelectBottomSC>
-          </DivRightSearchBlockSC>
+          <DivSelectTopSC>
+            <DivOptionLangs>Изучаю</DivOptionLangs>
+            <DivOptionLangs value="1">Русский</DivOptionLangs>
+            <DivOptionLangs value="2">Английский</DivOptionLangs>
+          </DivSelectTopSC>
+          <DivSelectBottomSC>
+            <DivOptionLangs>Владею</DivOptionLangs>
+            <DivOptionLangs value="1">Русский</DivOptionLangs>
+            <DivOptionLangs value="2">Английский</DivOptionLangs>
+          </DivSelectBottomSC>
+        </DivRightSearchBlockSC>
           <DivBottomSearchBlockSC />
         </DivSearchBlocksWrapCS>
       </DivSearchMainCS>
@@ -72,8 +84,20 @@ const Mainpage = () => {
       <DivRecentQMainCS>
         <DivRecQBlockCS>
           <DivRecQText>Последние вопросы</DivRecQText>
-          
         </DivRecQBlockCS>
+        <DivQBlock>
+        {
+                    posts.map((item, i) => {
+                        return (
+                            <Post
+                                post={item}
+                                key={i}
+                            ></Post>
+                        )
+                    })
+                    
+                }
+        </DivQBlock>
       </DivRecentQMainCS>
 
       <DivAboutUsMainCS>
@@ -82,26 +106,47 @@ const Mainpage = () => {
           Solve foreign language questions for free
         </DivMinitextAbout>
         <DivBlocks>
-        <Div1Block>
-          <ImgLineAboutUs1 />
-          <DivAboutUsText>
-            <DivAboutUsTextTitle>Произношение, которое будут хорошо понимать</DivAboutUsTextTitle><DivAboutUsTextp>Пусть носители языка проверят ваше произношение. Получите обратную связь о том, как вы говорите и приобретите более естественное произношение.</DivAboutUsTextp>
-          </DivAboutUsText>
-        </Div1Block>
-        <Div2Block>
-          <DivAboutUsText>
-          <DivAboutUsTextTitle2>Естественная речь</DivAboutUsTextTitle2><DivAboutUsTextp2>Вы можете узнать выражения, которые используют носители языка, если они будут проверять не только ваши дневники, но и сочинения и деловую переписку!</DivAboutUsTextp2>
-         </DivAboutUsText>
-           <ImgLineAboutUs2 />
-        </Div2Block>
-        <Div3Block>
-          <ImgLineAboutUs3 />
-          <DivAboutUsText>
-            <DivAboutUsTextTitle>Выбор правильных слов в соответствующих случаях</DivAboutUsTextTitle><DivAboutUsTextp>Какое выражение мне использовать на работе? А или Б? Узнайте у носителей языка и выбирайте правильные слова для каждой конкретной ситуации.</DivAboutUsTextp>
-          </DivAboutUsText>
-        </Div3Block>
+          <Div1Block>
+            <ImgLineAboutUs1 />
+            <DivAboutUsText>
+              <DivAboutUsTextTitle>
+                Произношение, которое будут хорошо понимать
+              </DivAboutUsTextTitle>
+              <DivAboutUsTextp>
+                Пусть носители языка проверят ваше произношение. Получите
+                обратную связь о том, как вы говорите и приобретите более
+                естественное произношение.
+              </DivAboutUsTextp>
+            </DivAboutUsText>
+          </Div1Block>
+          <Div2Block>
+            <DivAboutUsText>
+              <DivAboutUsTextTitle2>Естественная речь</DivAboutUsTextTitle2>
+              <DivAboutUsTextp2>
+                Вы можете узнать выражения, которые используют носители языка,
+                если они будут проверять не только ваши дневники, но и сочинения
+                и деловую переписку!
+              </DivAboutUsTextp2>
+            </DivAboutUsText>
+            <ImgLineAboutUs2 />
+          </Div2Block>
+          <Div3Block>
+            <ImgLineAboutUs3 />
+            <DivAboutUsText>
+              <DivAboutUsTextTitle>
+                Выбор правильных слов в соответствующих случаях
+              </DivAboutUsTextTitle>
+              <DivAboutUsTextp>
+                Какое выражение мне использовать на работе? А или Б? Узнайте у
+                носителей языка и выбирайте правильные слова для каждой
+                конкретной ситуации.
+              </DivAboutUsTextp>
+            </DivAboutUsText>
+          </Div3Block>
         </DivBlocks>
-        <DivMinitextAboutBottom>Learn practical language skills</DivMinitextAboutBottom>
+        <DivMinitextAboutBottom>
+          Learn practical language skills
+        </DivMinitextAboutBottom>
         <DivMinitextAboutBottom2>Language exchange app</DivMinitextAboutBottom2>
       </DivAboutUsMainCS>
 
@@ -112,12 +157,11 @@ const Mainpage = () => {
             <ImgBlockSignIn />
             <DivSignInTextSC type="text" placeholder="Login" />
             <DivSignInText2SC type="text" placeholder="Password" />
-            <DivSigninWordSC>Войти</DivSigninWordSC>
-            <DivSignupWordSC>Зарегистрироваться</DivSignupWordSC>
+            <DivSigninWordSC to="/mainpage">Войти</DivSigninWordSC>
+            <DivSignupWordSC to="/signup">Зарегистрироваться</DivSignupWordSC>
           </DivBlackSignInBlockSC>
         </DivSignInWrapCS>
       </DivSignMainCS>
-
     </DivWrapMainCS>
   );
 };
