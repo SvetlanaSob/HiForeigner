@@ -13,7 +13,7 @@ background: black;
 export const DivFooterShadowCS = styled.div`
 //border: 1px solid red;
 display: grid;
-height:10px;
+height:0px;
 width:auto;
 box-shadow: 0px -10px 40px 50px black;
 `;

@@ -7,6 +7,7 @@ import MainFooter from './components/footer/footer';
 import SignIn from "./components/Sign/SignIn";
 import SignUp from "./components/Sign/SignUp";
 import Logged from "./components/mainpage/logged";
+import Forum from "./components/forum/forum";
 function App() {
   return (
     <div className="App">
@@ -18,6 +19,8 @@ function App() {
                 <Route path="/signin" element={<SignIn/>} />
                 <Route path="/signup" element={<SignUp/>} />
                 <Route path="/mainpage" element={<Logged/>} />
+                <Route path="/forum" element={<Forum/>} />
+
               
  </Routes>
      </div>

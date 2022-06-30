@@ -33,6 +33,7 @@ export const ButtonHeaderSignInSC = styled(Link)`
  margin-top: 60px;
   font-size: 20px;
   text-decoration:none;
+  
   color: rgb(230, 245, 255);
  // border: 1px solid red;
   cursor: pointer;

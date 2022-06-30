@@ -42,40 +42,102 @@ import {
   DivMinitextAboutBottom2,
   DivBlocks,
   DivQBlock,
-
+  UlSearch,
+  LiSearch,
 } from "../../styles/mainpage.styles";
 import Post from "./Post";
 import arrayPosts from "./arrayPosts";
-
+import { useNavigate } from "react-router-dom";
 
 const Mainpage = (props) => {
-  const [posts, getPosts] = useState([])
+  const [posts, getPosts] = useState([]);
   useEffect(() => {
-    getPosts(arrayPosts)
-}, [])
+    getPosts(arrayPosts);
+  }, []);
 
+  const [value, setValue] = useState('');
+  const filteredQs = posts.filter((word) => {
+    return word.text.toLowerCase().includes(value.toLowerCase());
+  });
 
+//   const getID = (id)=>{
+// console.log(id)
+
+//   };
+  
+
+  const [speak, setS] = useState("");
+  const [learn, setL] = useState("");
+ 
+
+  const onChange = (status) => (e) => {
+    switch (status) {
+      case "speak":
+        return setS(e.target.value);
+      default:
+        break;
+    }
+  };
+  const onChange2 = (status) => (e) => {
+    switch (status) {  
+        case "learn":
+          return setL(e.target.value); 
+      default:
+        break;
+    }
+  };
+ 
+  const onClickButton = () => {
+      const _op = {
+        learn,
+      };
+      console.log(_op);
+     
+  };
+  const onClickButton2 = () => {
+    const _op = {
+      speak,
+    };
+    console.log(_op);
+   
+};
+let navigate = useNavigate();
+let path = "/mainpage";
+const isLogged=()=>{
+  navigate(path);
+}
   return (
     <DivWrapMainCS>
       <DivSearchMainCS>
         <DivSearchBlocksWrapCS>
           <DivLeftSearchBlockSC>
-          <DivSearchSC type="text"></DivSearchSC>
-          <DivTextSearchSC>SEARCH</DivTextSearchSC>
+            <DivSearchSC
+              type="text"
+              onChange={(event) => setValue(event.target.value)}
+            ></DivSearchSC>{" "}
+            <UlSearch isActive={value !== ''}>
+              { 
+              value ?
+              filteredQs.map((item, i) => {
+            return <LiSearch key={i} >{item.text}  </LiSearch>
+           
+          }) : null}
+            </UlSearch>
+            <DivTextSearchSC>SEARCH</DivTextSearchSC>
           </DivLeftSearchBlockSC>
           <DivTextLanguageSC>LANGUAGE</DivTextLanguageSC>
           <DivRightSearchBlockSC>
-          <DivSelectTopSC>
-            <DivOptionLangs>Изучаю</DivOptionLangs>
-            <DivOptionLangs value="1">Русский</DivOptionLangs>
-            <DivOptionLangs value="2">Английский</DivOptionLangs>
-          </DivSelectTopSC>
-          <DivSelectBottomSC>
-            <DivOptionLangs>Владею</DivOptionLangs>
-            <DivOptionLangs value="1">Русский</DivOptionLangs>
-            <DivOptionLangs value="2">Английский</DivOptionLangs>
-          </DivSelectBottomSC>
-        </DivRightSearchBlockSC>
+            <DivSelectTopSC onChange={e => { onClickButton(e.target.value)}}  >
+              <DivOptionLangs >Изучаю</DivOptionLangs>
+              <DivOptionLangs  type="submit" onClick={onChange2("learn")} value="Английский" >Русский</DivOptionLangs>
+              <DivOptionLangs type="submit"  onClick={onChange2("learn")}  value="Русский">Английский</DivOptionLangs>
+            </DivSelectTopSC>
+            <DivSelectBottomSC   onChange={e => { onClickButton2(e.target.value)}} > 
+              <DivOptionLangs>Владею</DivOptionLangs>
+              <DivOptionLangs  type="submit" onClick={onChange("speak")}  value="Английский"  >Русский</DivOptionLangs>
+              <DivOptionLangs type="submit" onClick={onChange("speak")}  value="Русский" >Английский</DivOptionLangs>
+            </DivSelectBottomSC>
+          </DivRightSearchBlockSC>
           <DivBottomSearchBlockSC />
         </DivSearchBlocksWrapCS>
       </DivSearchMainCS>
@@ -85,17 +147,9 @@ const Mainpage = (props) => {
           <DivRecQText>Последние вопросы</DivRecQText>
         </DivRecQBlockCS>
         <DivQBlock>
-        {
-                    posts.map((item, i) => {
-                        return (
-                            <Post
-                                post={item}
-                                key={i}
-                            ></Post>
-                        )
-                    })
-                    
-                }
+          {arrayPosts.slice(0, 3).map((item, i) => {
+            return <Post post={item} key={i} ></Post>;
+          })}
         </DivQBlock>
       </DivRecentQMainCS>
 
@@ -156,7 +210,7 @@ const Mainpage = (props) => {
             <ImgBlockSignIn />
             <DivSignInTextSC type="text" placeholder="Login" />
             <DivSignInText2SC type="text" placeholder="Password" />
-            <DivSigninWordSC to="/mainpage">Войти</DivSigninWordSC>
+            <DivSigninWordSC onClick={isLogged}>Войти</DivSigninWordSC>
             <DivSignupWordSC to="/signup">Зарегистрироваться</DivSignupWordSC>
           </DivBlackSignInBlockSC>
         </DivSignInWrapCS>

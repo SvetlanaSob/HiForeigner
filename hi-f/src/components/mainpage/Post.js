@@ -11,8 +11,8 @@ const Post = (props) => {
         <>
          <DivBoxQPostP>
             <p>
-                {post.text} 
-                
+                {post.text } 
+                {post.speak}
                 </p>
                <DivDots/>
              </DivBoxQPostP>

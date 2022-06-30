@@ -15,6 +15,7 @@ export const DivWrapMainCS = styled.div`
 export const DivWrapMainLCS = styled.div`
   display: grid;
   grid-template-rows: 900px 900px;
+
 `;
 export const DivSearchMainCS = styled.div`
   background-image: url(${MainBack});
@@ -43,7 +44,7 @@ export const DivSearchBlocksWrapCS = styled.div`
  // border: 2px solid yellow;
 `;
 export const DivLeftSearchBlockSC = styled.div`
-  z-index: 2;
+  z-index: 3;
   display: grid;
   position: absolute;
   background-color: white;
@@ -97,7 +98,7 @@ export const DivTextLanguageSC = styled.h1`
   pointer-events: none;
 `;
 export const DivTextSearchSC = styled.h1`
-  z-index: 2;
+  z-index: 3;
   display: grid;
   position: absolute;
   font-family: "Lusitana";
@@ -232,7 +233,7 @@ export const DivOptionLangs2 = styled.option`
   background-color: white;
 `;
 export const DivSearchSC = styled.input`
-  z-index: 3;
+  z-index: 4;
   display: grid;
   position: absolute;
   box-sizing: border-box;
@@ -572,7 +573,7 @@ export const DivSignInText3SC = styled.input`
     outline: none;
   }
 `;
-export const DivSignupWordSC = styled(Link)`
+export const DivSignupWordSC = styled.button`
   z-index: 3;
   width: auto;
   display: grid;
@@ -585,12 +586,34 @@ export const DivSignupWordSC = styled(Link)`
   justify-self: center;
   margin-top: -140px;
   text-decoration: none;
+  background: none;
+  border: none;
   /* identical to box height, or 0px */
   color: #ffffff;
   //border: 2px solid RED;
   cursor: pointer;
 `;
-export const DivSigninWordSC = styled(Link)`
+export const DivSignupWord1SC = styled(Link)`
+  z-index: 3;
+  width: auto;
+  display: grid;
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 20px;
+  height: 25px;
+  justify-self: center;
+  margin-top: -140px;
+  text-decoration: none;
+  background: none;
+  border: none;
+  /* identical to box height, or 0px */
+  color: #ffffff;
+  //border: 2px solid RED;
+  cursor: pointer;
+`;
+export const DivSigninWordSC = styled.button`
   z-index: 3;
   width: auto;
   display: grid;
@@ -957,4 +980,46 @@ font-size: 32px;
 line-height: 30px;
 /* or 94% */
 }
+`;
+export const UlSearch = styled.ul`
+ z-index: 5;
+
+ position: absolute;
+ left: 0;
+ top: 50px;
+ width: 100%;
+background-color: white;
+opacity: 90%;
+list-style: none;
+margin: 0;
+padding: 0;
+margin-top: 118px;
+margin-left: 45px;
+border: ${(p) => (p.isActive? '2.9311px solid rgba(0, 0, 0, 0.5);' : null)};;
+
+  border-radius: 12.0925px;
+  width: 456.59px;
+  box-shadow: 0px 16.0925px 16.7362px rgba(0, 0, 0, 0.25);
+  max-height: 240px;
+  height: auto;
+  overflow: auto;
+ 
+`;
+export const LiSearch = styled.li`
+ z-index: 5;
+
+ //border: 2px solid blue;
+padding: 10px;
+text-align: left;
+
+:hover{
+  background-color: #fcb447;
+  cursor: pointer;
+  transition: cubic-bezier(1, 0, 0, 1) .0,5 s all;
+}
+`;
+
+export const ALinkQ=styled.a`
+text-decoration: none;
+color: black;
 `;

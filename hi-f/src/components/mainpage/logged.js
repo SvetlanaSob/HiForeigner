@@ -18,6 +18,9 @@ import {
   DivButtonsBlockSC,
   DivButtonSC,
   DivWrapMainLCS,
+  UlSearch,
+  LiSearch,
+  ALinkQ,
 } from "../../styles/mainpage.styles";
 import Post from "./Post";
 import BoxCreatePost from "./BoxCreatePost";
@@ -33,35 +36,86 @@ const Logged = (props) => {
 
 const addNewPost = (data) => {
   const tempArray = posts
-  tempArray.push(data)
+  tempArray.unshift(data)
   getPosts([...tempArray])
 
 }
   
+const [value, setValue] = useState('')
+  const filteredQs = posts.filter(word =>{
+    return word.text.toLowerCase().includes(value.toLowerCase())
+  })
 
+const gettingID=(id) =>{
+  const theId=id
+console.log(theId)}
+
+const [speak, setS] = useState("");
+const [learn, setL] = useState("");
+
+
+const onChange = (status) => (e) => {
+  switch (status) {
+    case "speak":
+      return setS(e.target.value);
+    default:
+      break;
+  }
+};
+const onChange2 = (status) => (e) => {
+  switch (status) {  
+      case "learn":
+        return setL(e.target.value); 
+    default:
+      break;
+  }
+};
+
+const onClickButton = () => {
+    const _op = {
+      learn,
+    };
+    console.log(_op);
   
+};
+const onClickButton2 = () => {
+  const _op = {
+    speak,
+  };
+  console.log(_op);
 
-
+};
 
   const listContent = [
     {
       block: (
         <DivRightSearchBlockSC>
-          <DivSelectTopSC>
-            <DivOptionLangs>Изучаю</DivOptionLangs>
-            <DivOptionLangs value="1">Русский</DivOptionLangs>
-            <DivOptionLangs value="2">Английский</DivOptionLangs>
-          </DivSelectTopSC>
-          <DivSelectBottomSC>
-            <DivOptionLangs>Владею</DivOptionLangs>
-            <DivOptionLangs value="1">Русский</DivOptionLangs>
-            <DivOptionLangs value="2">Английский</DivOptionLangs>
-          </DivSelectBottomSC>
+          <DivSelectTopSC onChange={e => { onClickButton(e.target.value)}}  >
+              <DivOptionLangs>Изучаю</DivOptionLangs>
+              <DivOptionLangs  type="submit" onClick={onChange2("learn")} value="Английский" >Русский</DivOptionLangs>
+              <DivOptionLangs type="submit"  onClick={onChange2("learn")}  value="Русский">Английский</DivOptionLangs>
+            </DivSelectTopSC>
+            <DivSelectBottomSC   onChange={e => { onClickButton2(e.target.value)}} > 
+              <DivOptionLangs>Владею</DivOptionLangs>
+              <DivOptionLangs  type="submit" onClick={onChange("speak")}  value="Английский"  >Русский</DivOptionLangs>
+              <DivOptionLangs type="submit" onClick={onChange("speak")}  value="Русский" >Английский</DivOptionLangs>
+            </DivSelectBottomSC>
         </DivRightSearchBlockSC>
       ),
       search: (
         <>
-          <DivSearchSC type="text"></DivSearchSC>
+          <DivSearchSC
+              type="text"
+              onChange={(event) => setValue(event.target.value)}
+            ></DivSearchSC>{" "}
+            <UlSearch isActive={value !== ''}>
+              { 
+              value ?
+              filteredQs.map((item, i) => {
+            return <LiSearch >{item.text}</LiSearch>
+           
+          }) : null}
+            </UlSearch>
           <DivTextSearchSC>SEARCH</DivTextSearchSC>
         </>
       ),
@@ -69,23 +123,24 @@ const addNewPost = (data) => {
     {
       block: (
         <DivRightSearchBlockSC>
-          <DivSelectTopSC>
-            <DivOptionLangs>Изучаю</DivOptionLangs>
-            <DivOptionLangs value="1">Русский</DivOptionLangs>
-            <DivOptionLangs value="2">Английский</DivOptionLangs>
-          </DivSelectTopSC>
-          <DivSelectBottomSC>
-            <DivOptionLangs>Владею</DivOptionLangs>
-            <DivOptionLangs value="1">Русский</DivOptionLangs>
-            <DivOptionLangs value="2">Английский</DivOptionLangs>
-          </DivSelectBottomSC>
+           <DivSelectTopSC onChange={e => { onClickButton(e.target.value)}}  >
+              <DivOptionLangs >Изучаю</DivOptionLangs>
+              <DivOptionLangs  type="submit" onClick={onChange2("learn")} value="Английский" >Русский</DivOptionLangs>
+              <DivOptionLangs type="submit"  onClick={onChange2("learn")}  value="Русский">Английский</DivOptionLangs>
+            </DivSelectTopSC>
+            <DivSelectBottomSC   onChange={e => { onClickButton2(e.target.value)}} > 
+              <DivOptionLangs>Владею</DivOptionLangs>
+              <DivOptionLangs  type="submit" onClick={onChange("speak")}  value="Английский"  >Русский</DivOptionLangs>
+              <DivOptionLangs type="submit" onClick={onChange("speak")}  value="Русский" >Английский</DivOptionLangs>
+            </DivSelectBottomSC>
         </DivRightSearchBlockSC>
       ),
-      search: <>
+      search: (<>
 <BoxCreatePost
                     addNewPost={addNewPost}
                 />
-      </>,
+      </>
+      ),
     },
   ];
   
@@ -93,6 +148,8 @@ const addNewPost = (data) => {
   const onClickTab = (index) => (e) => {
     getIndexButton(index);
   };
+
+
 
   return (
     <DivWrapMainLCS>
@@ -125,11 +182,12 @@ const addNewPost = (data) => {
         </DivRecQBlockCS>
         <DivQBlock>
         {
-                    posts.map((item, i) => {
+                   arrayPosts.slice(0, 3).map((item, i) => {
                         return (
                             <Post
                                 post={item}
                                 key={i}
+                                // onClick={console.log(i)}
                             ></Post>
                         )
                     })
