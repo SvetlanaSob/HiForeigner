@@ -5,7 +5,7 @@ import LadySignIn from "../image/woman.png";
 import Speaks from "../image/speaks.png";
 import Chats from "../image/chats.png";
 import Phone from "../image/phone.png";
-import {GoPrimitiveDot} from 'react-icons/go';
+import { GoPrimitiveDot } from "react-icons/go";
 import Dots from "../image/dots.png";
 
 export const DivWrapMainCS = styled.div`
@@ -15,7 +15,6 @@ export const DivWrapMainCS = styled.div`
 export const DivWrapMainLCS = styled.div`
   display: grid;
   grid-template-rows: 900px 900px;
-
 `;
 export const DivSearchMainCS = styled.div`
   background-image: url(${MainBack});
@@ -41,7 +40,7 @@ export const DivSearchBlocksWrapCS = styled.div`
   /* position: relative; */
   margin: 0 auto;
   margin-top: 100px;
- // border: 2px solid yellow;
+  // border: 2px solid yellow;
 `;
 export const DivLeftSearchBlockSC = styled.div`
   z-index: 3;
@@ -255,7 +254,6 @@ export const DivSearchSC = styled.input`
     opacity: 90%;
   }
   :focus {
-    
     border-bottom: 3px solid rgba(0, 0, 0, 0.5);
     outline: none;
   }
@@ -290,7 +288,7 @@ export const DivRecQText = styled.h1`
   width: 500px;
   height: 50px;
   margin-right: 280px;
- 
+
   /* identical to box height, or 0px */
   color: #000000;
   //border: 2px solid red;
@@ -369,9 +367,9 @@ export const DivDots = styled.div`
   background-size: 100%;
 
   /* position: relative; */
- // border: 2px solid red;
-margin-top:-110px;
- margin-left: 650px;
+  // border: 2px solid red;
+  margin-top: -110px;
+  margin-left: 650px;
 `;
 export const DivSignInTextSC = styled.input`
   z-index: 3;
@@ -798,8 +796,8 @@ export const DivAboutUsTextp2 = styled.p`
 `;
 export const DivMinitextAboutBottom = styled.h1`
   z-index: 4;
-display: grid;
-  
+  display: grid;
+
   line-height: 50px;
   height: 50px;
   width: 1040px;
@@ -808,24 +806,24 @@ display: grid;
   justify-self: center;
   /* identical to box height, or 0px */
   color: #000000;
- //  border: 2px solid RED;
+  //  border: 2px solid RED;
   pointer-events: none;
 
-  font-family: 'Lusitana';
-font-style: normal;
-font-weight: 400;
-font-size: 62.6305px;
-line-height: 0%;
-/* or 0px */
-align-items: center;
-text-align: center;
+  font-family: "Lusitana";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 62.6305px;
+  line-height: 0%;
+  /* or 0px */
+  align-items: center;
+  text-align: center;
 
-color: #FFFFFF;
+  color: #ffffff;
 `;
 export const DivMinitextAboutBottom2 = styled.h1`
   z-index: 4;
-display: grid;
-  
+  display: grid;
+
   line-height: 50px;
   height: 50px;
   width: 1040px;
@@ -837,31 +835,29 @@ display: grid;
   // border: 2px solid RED;
   pointer-events: none;
 
-  font-family: 'Lusitana';
-font-style: normal;
-font-weight: 400;
-font-size: 62.6305px;
-line-height: 0%;
-/* or 0px */
-align-items: center;
-text-align: center;
+  font-family: "Lusitana";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 62.6305px;
+  line-height: 0%;
+  /* or 0px */
+  align-items: center;
+  text-align: center;
 
-color: #FFFFFF;
+  color: #ffffff;
 `;
 export const DivBlocks = styled.div`
   // border: 2px solid RED;
-display: grid;
- width: auto;
- height: 400px;
- margin-top:300px;
-
- 
+  display: grid;
+  width: auto;
+  height: 400px;
+  margin-top: 300px;
 `;
 export const DivQBlock = styled.div`
   // border: 2px solid RED;
- width: auto;
- height: 300px;
- display: grid;
+  width: auto;
+  height: 300px;
+  display: grid;
   grid-template-rows: repeat(auto-fit, max-content);
   gap: 20px;
   width: 80vw;
@@ -869,133 +865,129 @@ export const DivQBlock = styled.div`
   /* position: relative; */
   margin: 0 auto;
   margin-top: 15px;
- 
-
 `;
 
-export const DivButtonsBlockSC= styled.div`
-z-index: 2;
+export const DivButtonsBlockSC = styled.div`
+  z-index: 2;
   // border: 2px solid RED;
- display: grid;
-grid-template-columns: 50px 50px;
-grid-gap: 70px;
-justify-self: end;
-margin-left: 65px;
-width: 340px;
-margin-top: 20px;
-height: 70px;
+  display: grid;
+  grid-template-columns: 50px 50px;
+  grid-gap: 70px;
+  justify-self: end;
+  margin-left: 65px;
+  width: 340px;
+  margin-top: 20px;
+  height: 70px;
   /* position: relative; */
 `;
 export const DivButtonSC = styled(GoPrimitiveDot)`
-z-index: 2;
- // border: 2px solid blue;
+  z-index: 2;
+  // border: 2px solid blue;
   color: black;
   width: 70px;
   height: 70px;
 
-   cursor: pointer;
-  color: ${(p) => (p.isActive ? 'black;' : 'white')};;
+  cursor: pointer;
+  color: ${(p) => (p.isActive ? "black;" : "white")}; ;
 `;
 
-export const DivBoxCreateQSC = styled.div `
- width: 550px;
+export const DivBoxCreateQSC = styled.div`
+  width: 550px;
   height: 380px;
   display: grid;
   grid-template-rows: 180px 30px;
   gap: 20px;
-max-width: 550px;
+  max-width: 550px;
   padding: 20px;
   box-sizing: border-box;
   border-radius: 20px;
- // border: 2px solid black;
+  // border: 2px solid black;
 `;
 
+export const TextAreaCreateQSC = styled.textarea`
+  background: initial;
+  border-radius: 10px;
 
-
-export const TextAreaCreateQSC = styled.textarea `
-    background: initial;
-    border-radius: 10px;
- 
   border: 1px solid black;
   border-bottom: 1px solid rgb(121, 66, 95);
-  color:black;
-  min-height:150px;
+  color: black;
+  min-height: 150px;
   max-width: 500px;
-  font-family: 'Source Code Pro', monospace;
-  :focus{
-    
+  font-family: "Source Code Pro", monospace;
+  :focus {
     border-bottom: 5px solid rgba(252, 180, 71, 0.86);
     outline: none;
   }
-  ::placeholder{
-    color:black;
+  ::placeholder {
+    color: black;
     font-size: 24px;
-    
+
     text-align: center;
   }
 `;
-export const ButtonQSC = styled.button `
-   background: black;
+export const ButtonQSC = styled.button`
+  background: black;
   border: none;
-  color:rgb(230, 245, 255);
+  color: rgb(230, 245, 255);
   border-radius: 15px;
   cursor: pointer;
-  :hover{
-   opacity: 80%;
+  :hover {
+    opacity: 80%;
   }
-  :active{
-    background:black;
-    color:red;
+  :active {
+    background: black;
+    color: red;
     opacity: 100%;
   }
 `;
 export const DivImgDot = styled(GoPrimitiveDot)`
-color:${(p) => (p.isActive ? 'black;' : 'white')};
+  color: ${(p) => (p.isActive ? "black;" : "white")};
 `;
 
 export const DivBoxQPostP = styled.div`
- z-index: 1;
-width: 800px;
+  z-index: 1;
+  width: 800px;
   height: fit-content;
   display: grid;
   gap: 20px;
-justify-self: center;
+  justify-self: center;
   padding: 20px;
   box-sizing: border-box;
   border-radius: 20px;
- 
-  background: #FBFBFB;
-border-radius: 30px;
-color: #000000;
+margin-left: 150px;
+  background: #fbfbfb;
+  border-radius: 30px;
+  color: #000000;
+
   //border: 2px solid black;
-p{
-  z-index: 1;
-  margin-left: 30px;
-  margin-right: 100px;
-  text-align: left;
-  font-family: 'Playfair Display';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 30px;
-/* or 94% */
-}
+  p {
+    z-index: 1;
+    margin-left: 30px;
+    margin-right: 100px;
+    text-align: left;
+    font-family: "Playfair Display";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 30px;
+    /* or 94% */
+  }
 `;
 export const UlSearch = styled.ul`
- z-index: 5;
+  z-index: 5;
 
- position: absolute;
- left: 0;
- top: 50px;
- width: 100%;
-background-color: white;
-opacity: 90%;
-list-style: none;
-margin: 0;
-padding: 0;
-margin-top: 118px;
-margin-left: 45px;
-border: ${(p) => (p.isActive? '2.9311px solid rgba(0, 0, 0, 0.5);' : null)};;
+  position: absolute;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  background-color: white;
+  opacity: 90%;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 118px;
+  margin-left: 45px;
+  border: ${(p) => (p.isActive ? "2.9311px solid rgba(0, 0, 0, 0.5);" : null)};
 
   border-radius: 12.0925px;
   width: 456.59px;
@@ -1003,23 +995,28 @@ border: ${(p) => (p.isActive? '2.9311px solid rgba(0, 0, 0, 0.5);' : null)};;
   max-height: 240px;
   height: auto;
   overflow: auto;
- 
 `;
 export const LiSearch = styled.li`
- z-index: 5;
+  z-index: 5;
 
- //border: 2px solid blue;
-padding: 10px;
-text-align: left;
+  //border: 2px solid blue;
+  padding: 10px;
+  text-align: left;
 
-:hover{
-  background-color: #fcb447;
-  cursor: pointer;
-  transition: cubic-bezier(1, 0, 0, 1) .0,5 s all;
-}
+  :hover {
+    background-color: #fcb447;
+    cursor: pointer;
+    transition: cubic-bezier(1, 0, 0, 1) 0, 5 s all;
+  }
 `;
 
-export const ALinkQ=styled.a`
-text-decoration: none;
-color: black;
+export const ALinkQ = styled.a`
+  text-decoration: none;
+  color: black;
+`;
+
+export const buttonSC = styled.button`
+margin-left: 200px;
+border: 2px solid blue;
+
 `;

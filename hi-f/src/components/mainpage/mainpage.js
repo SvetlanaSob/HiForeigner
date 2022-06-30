@@ -55,20 +55,18 @@ const Mainpage = (props) => {
     getPosts(arrayPosts);
   }, []);
 
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState("");
   const filteredQs = posts.filter((word) => {
     return word.text.toLowerCase().includes(value.toLowerCase());
   });
 
-//   const getID = (id)=>{
-// console.log(id)
+  //   const getID = (id)=>{
+  // console.log(id)
 
-//   };
-  
+  //   };
 
   const [speak, setS] = useState("");
   const [learn, setL] = useState("");
- 
 
   const onChange = (status) => (e) => {
     switch (status) {
@@ -79,33 +77,38 @@ const Mainpage = (props) => {
     }
   };
   const onChange2 = (status) => (e) => {
-    switch (status) {  
-        case "learn":
-          return setL(e.target.value); 
+    switch (status) {
+      case "learn":
+        return setL(e.target.value);
       default:
         break;
     }
   };
- 
+
   const onClickButton = () => {
-      const _op = {
-        learn,
-      };
-      console.log(_op);
-     
+    const _op = {
+      learn,
+    };
+    console.log(_op);
   };
   const onClickButton2 = () => {
     const _op = {
       speak,
     };
     console.log(_op);
-   
-};
-let navigate = useNavigate();
-let path = "/mainpage";
-const isLogged=()=>{
-  navigate(path);
-}
+  };
+  let navigate = useNavigate();
+  let path = "/mainpage";
+  let forum ="/forum"
+  const isLogged = () => {
+    navigate(path);
+  };
+  const redir = (prop) => {
+    const id=prop;
+    console.log(id);
+    navigate(forum);
+  };
+  
   return (
     <DivWrapMainCS>
       <DivSearchMainCS>
@@ -115,27 +118,58 @@ const isLogged=()=>{
               type="text"
               onChange={(event) => setValue(event.target.value)}
             ></DivSearchSC>{" "}
-            <UlSearch isActive={value !== ''}>
-              { 
-              value ?
-              filteredQs.map((item, i) => {
-            return <LiSearch key={i} >{item.text}  </LiSearch>
-           
-          }) : null}
+            <UlSearch isActive={value !== ""}>
+              {value
+                ? filteredQs.map((item, i) => {
+                    return <LiSearch key={i} onClick={redir}>{item.text} </LiSearch>;
+                  })
+                : null}
             </UlSearch>
             <DivTextSearchSC>SEARCH</DivTextSearchSC>
           </DivLeftSearchBlockSC>
           <DivTextLanguageSC>LANGUAGE</DivTextLanguageSC>
           <DivRightSearchBlockSC>
-            <DivSelectTopSC onChange={e => { onClickButton(e.target.value)}}  >
-              <DivOptionLangs >Изучаю</DivOptionLangs>
-              <DivOptionLangs  type="submit" onClick={onChange2("learn")} value="Английский" >Русский</DivOptionLangs>
-              <DivOptionLangs type="submit"  onClick={onChange2("learn")}  value="Русский">Английский</DivOptionLangs>
+            <DivSelectTopSC
+              onChange={(e) => {
+                onClickButton(e.target.value);
+              }}
+            >
+              <DivOptionLangs>Изучаю</DivOptionLangs>
+              <DivOptionLangs
+                type="submit"
+                onClick={onChange2("learn")}
+                value="Английский"
+              >
+                Русский
+              </DivOptionLangs>
+              <DivOptionLangs
+                type="submit"
+                onClick={onChange2("learn")}
+                value="Русский"
+              >
+                Английский
+              </DivOptionLangs>
             </DivSelectTopSC>
-            <DivSelectBottomSC   onChange={e => { onClickButton2(e.target.value)}} > 
+            <DivSelectBottomSC
+              onChange={(e) => {
+                onClickButton2(e.target.value);
+              }}
+            >
               <DivOptionLangs>Владею</DivOptionLangs>
-              <DivOptionLangs  type="submit" onClick={onChange("speak")}  value="Английский"  >Русский</DivOptionLangs>
-              <DivOptionLangs type="submit" onClick={onChange("speak")}  value="Русский" >Английский</DivOptionLangs>
+              <DivOptionLangs
+                type="submit"
+                onClick={onChange("speak")}
+                value="Английский"
+              >
+                Русский
+              </DivOptionLangs>
+              <DivOptionLangs
+                type="submit"
+                onClick={onChange("speak")}
+                value="Русский"
+              >
+                Английский
+              </DivOptionLangs>
             </DivSelectBottomSC>
           </DivRightSearchBlockSC>
           <DivBottomSearchBlockSC />
@@ -148,7 +182,7 @@ const isLogged=()=>{
         </DivRecQBlockCS>
         <DivQBlock>
           {arrayPosts.slice(0, 3).map((item, i) => {
-            return <Post post={item} key={i} ></Post>;
+            return <buttonSC onClick={redir} > <Post post={item} key={i}></Post></buttonSC>;
           })}
         </DivQBlock>
       </DivRecentQMainCS>

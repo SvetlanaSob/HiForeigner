@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
-import { DivRecentQMain2CS } from '../../styles/forum.styles';
-import Post from "../mainpage/Post";
+import React, { useState, useEffect } from "react";
+import { DivQRWrap, DivQRWrap2, DivRecentQMain2CS } from "../../styles/forum.styles";
+import Q from "../forum/q";
+import A from "../forum/a";
 import arrayPosts from "../mainpage/arrayPosts";
-import { DivCreditSC, DivFooterShadowCS, DivFooterWrapCS, DivLinksSC, LinkFooterSC } from '../../styles/footer.styles';
-import { DivSearchMainCS, DivWrapMainCS } from '../../styles/mainpage.styles';
 
 
 const Forum = (props) => {
@@ -11,20 +10,25 @@ const Forum = (props) => {
   useEffect(() => {
     getPosts(arrayPosts);
   }, []);
- 
+
   return (
     <DivRecentQMain2CS>
-      {arrayPosts.slice(0, 3).map((item, i) => {
-            return <Post post={item} key={i} ></Post>;
-          })}
       
-     
+      <DivQRWrap>
+
+      {arrayPosts.slice(0, 1).map((item, i) => {
+        return <Q post={item} key={i}></Q>;
+      })}
+ <DivQRWrap2>
+
+{arrayPosts.slice(0, 5).map((item, i) => {
+  return <A post={item} key={i}></A>;
+})}
+
+</DivQRWrap2>
+      </DivQRWrap>
     </DivRecentQMain2CS>
-
-     
-
-    )
-  
-}
+  );
+};
 
 export default Forum;

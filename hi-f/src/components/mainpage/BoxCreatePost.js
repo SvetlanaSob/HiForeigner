@@ -1,8 +1,11 @@
 import React, { useState } from "react";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { ButtonQSC, DivBoxCreateQSC, TextAreaCreateQSC } from "../../styles/mainpage.styles";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import {
+  ButtonQSC,
+  DivBoxCreateQSC,
+  TextAreaCreateQSC,
+} from "../../styles/mainpage.styles";
 
 const BoxCreatePost = (props) => {
   const [text, setText] = useState("");
@@ -26,14 +29,14 @@ const BoxCreatePost = (props) => {
       addNewPost(_data);
       setText("");
     } else {
-    toast.error("Вы не можете отправить пустой вопрос!", {
-      position: "top-left",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: false,
-      draggable: true,
-      progress: undefined,
+      toast.error("Вы не можете отправить пустой вопрос!", {
+        position: "top-left",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
       });
     }
   };

@@ -1,6 +1,3 @@
-
-const arrayLogs = [
-
-];
+const arrayLogs = [];
 
 export default arrayLogs;

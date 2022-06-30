@@ -5,7 +5,7 @@ import Logo from "../image/Logo.svg";
 export const DivBoxHeaderSC = styled.div`
   z-index: 1;
   position: absolute;
-  height: 110px; 
+  height: 110px;
   width: 100%;
   display: grid;
   justify-content: space-around;
@@ -13,42 +13,38 @@ export const DivBoxHeaderSC = styled.div`
   background: black;
   box-shadow: 0px 10px 40px 40px black;
   grid-gap: 15vw;
-  
- 
 `;
 export const ButtonHeaderLangSC = styled.button`
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
   background: initial;
   border: none;
   font-size: 20px;
   color: rgb(230, 245, 255);
- // border: 1px solid red;
+  // border: 1px solid red;
   cursor: pointer;
-  
 `;
 export const ButtonHeaderSignInSC = styled(Link)`
-  font-family: 'Source Code Pro', monospace;
+  font-family: "Source Code Pro", monospace;
   background: initial;
-  border: none; 
- margin-top: 60px;
+  border: none;
+  margin-top: 60px;
   font-size: 20px;
-  text-decoration:none;
-  
+  text-decoration: none;
+
   color: rgb(230, 245, 255);
- // border: 1px solid red;
+  // border: 1px solid red;
   cursor: pointer;
 `;
 
-
 export const ImgLogoHeaderSC = styled(Link)`
- // border: 1px solid red;
+  // border: 1px solid red;
   background-image: url(${Logo});
   width: 100%;
-background-repeat: no-repeat;
-background-position: center;
-height: 120px;
-width: 600px;
-background-size: 500px;
-margin-top: 20px;
-display: grid;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 120px;
+  width: 600px;
+  background-size: 500px;
+  margin-top: 20px;
+  display: grid;
 `;
