@@ -1,17 +1,30 @@
 import React, { useState, useEffect } from "react";
-import { DivQRWrap, DivQRWrap2, DivRecentQMain2CS } from "../../styles/forum.styles";
+import { DivBoxQPostP2, DivBoxQPostP4, DivQRWrap, DivQRWrap2, DivQRWrap5, DivRecentQMain2CS } from "../../styles/forum.styles";
 import Q from "./q";
 import A from "./a";
 import arrayPostsA from "../mainpage/arrayPostsA";
 import arrayPosts from "../mainpage/arrayPosts";
+import BoxCreatePostA from "../mainpage/BoxCreatePostA";
 
 
-const Forum = (props) => {
+
+const ForumL = (props) => {
   const [posts, getPosts] = useState([]);
   useEffect(() => {
-    getPosts(arrayPostsA);
+    
     getPosts(arrayPosts)
   }, []);
+
+  const [postsA, getPostsA] = useState([]);
+  useEffect(() => {
+    getPostsA(arrayPostsA);
+  }, []);
+ 
+  const addNewPostA = (data) => {
+    const tempArray = postsA;
+    tempArray.push(data);
+    getPostsA([...tempArray]);
+  }; 
 
   return (
     <DivRecentQMain2CS>
@@ -28,9 +41,14 @@ const Forum = (props) => {
 })}
 
 </DivQRWrap2>
+<DivQRWrap5>
+<DivBoxQPostP2>
+          <BoxCreatePostA addNewPostA={addNewPostA} />
+      </DivBoxQPostP2> 
+      </DivQRWrap5>
       </DivQRWrap>
     </DivRecentQMain2CS>
   );
 };
 
-export default Forum;
+export default ForumL;

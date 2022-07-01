@@ -8,6 +8,7 @@ import SignIn from "./components/Sign/SignIn";
 import SignUp from "./components/Sign/SignUp";
 import Logged from "./components/mainpage/logged";
 import Forum from "./components/forum/forum";
+import ForumL from "./components/forum/forumlogged";
 function App() {
   return (
     <div className="App">
@@ -20,6 +21,7 @@ function App() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/mainpage" element={<Logged />} />
           <Route path="/forum" element={<Forum />} />
+          <Route path="/forumlogged" element={<ForumL />} />
         </Routes>
       </div>
       <MainFooter></MainFooter>

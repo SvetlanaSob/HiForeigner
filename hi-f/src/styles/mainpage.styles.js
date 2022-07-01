@@ -903,6 +903,18 @@ export const DivBoxCreateQSC = styled.div`
   border-radius: 20px;
   // border: 2px solid black;
 `;
+export const DivBoxCreateQSC2 = styled.div`
+  width: 955px;
+  height: 380px;
+  display: grid;
+  grid-template-rows: 260px 40px;
+  gap: 20px;
+  width: 955px;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 20px;
+ // border: 2px solid black;
+`;
 
 export const TextAreaCreateQSC = styled.textarea`
   background: initial;
@@ -925,11 +937,51 @@ export const TextAreaCreateQSC = styled.textarea`
     text-align: center;
   }
 `;
+export const TextAreaCreateQSC2 = styled.textarea`
+  background: initial;
+  border-radius: 10px;
+
+  border: 1px solid black;
+  border-bottom: 1px solid rgb(121, 66, 95);
+  color: black;
+  min-height: 250px;
+  max-width: 1000px;
+  font-size: 30px;
+  font-family: "Source Code Pro", monospace;
+  :focus {
+    border-bottom: 5px solid rgba(252, 180, 71, 0.86);
+    outline: none;
+  }
+  ::placeholder {
+    color: black;
+    font-size: 24px;
+
+    text-align: center;
+  }
+`;
 export const ButtonQSC = styled.button`
   background: black;
   border: none;
   color: rgb(230, 245, 255);
   border-radius: 15px;
+  cursor: pointer;
+  :hover {
+    opacity: 80%;
+  }
+  :active {
+    background: black;
+    color: red;
+    opacity: 100%;
+  }
+`;
+export const ButtonQSC2 = styled.button`
+  background: black;
+  border: none;
+  color: rgb(230, 245, 255);
+  border-radius: 15px;
+  font-size: 20px;
+  justify-self: center;
+  width: 300px;
   cursor: pointer;
   :hover {
     opacity: 80%;
@@ -958,7 +1010,11 @@ margin-left: 150px;
   background: #fbfbfb;
   border-radius: 30px;
   color: #000000;
-
+cursor: pointer;
+transition: 1s;
+:hover{
+  background:#a8a8a8;
+}
   //border: 2px solid black;
   p {
     z-index: 1;

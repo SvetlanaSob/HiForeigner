@@ -28,6 +28,19 @@ margin-right: 0px;
   background-color: #efefef;
  // border: 1px solid red;
 `;
+export const DivQRWrap5 = styled.div`
+display: grid;
+margin-top: 30px;
+margin-right: 0px;
+  z-index: 3;
+ width: 1000px;
+ 
+
+ 
+  height: fit-content;
+  background-color: #efefef;
+ // border: 1px solid red;
+`;
 export const DivQRWrap2 = styled.div`
 display: grid;
 grid-template-rows: repeat(auto-fit, max-content);

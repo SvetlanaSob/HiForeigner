@@ -84,7 +84,7 @@ const Logged = (props) => {
   };
   let navigate = useNavigate();
 
-  let forum ="/forum"
+  let forum ="/forumlogged"
   const redir = (prop) => {
     const id=prop;
     console.log(id);

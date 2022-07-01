@@ -100,6 +100,7 @@ const Mainpage = (props) => {
   let navigate = useNavigate();
   let path = "/mainpage";
   let forum ="/forum"
+  let sign="/signup"
   const isLogged = () => {
     navigate(path);
   };
@@ -107,6 +108,11 @@ const Mainpage = (props) => {
     const id=prop;
     console.log(id);
     navigate(forum);
+  };
+  const toSign =(prop)=>{
+    const id=prop;
+    console.log(id);
+    navigate(sign);
   };
   
   return (
@@ -245,7 +251,7 @@ const Mainpage = (props) => {
             <DivSignInTextSC type="text" placeholder="Login" />
             <DivSignInText2SC type="text" placeholder="Password" />
             <DivSigninWordSC onClick={isLogged}>Войти</DivSigninWordSC>
-            <DivSignupWordSC to="/signup">Зарегистрироваться</DivSignupWordSC>
+            <DivSignupWordSC onClick={toSign}>Зарегистрироваться</DivSignupWordSC>
           </DivBlackSignInBlockSC>
         </DivSignInWrapCS>
       </DivSignMainCS>
