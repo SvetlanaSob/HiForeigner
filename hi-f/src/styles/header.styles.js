@@ -22,6 +22,8 @@ export const ButtonHeaderLangSC = styled.button`
   color: rgb(230, 245, 255);
   // border: 1px solid red;
   cursor: pointer;
+  margin-top: 50px;
+  margin-left: 20px;
 `;
 export const ButtonHeaderSignInSC = styled(Link)`
   font-family: "Source Code Pro", monospace;

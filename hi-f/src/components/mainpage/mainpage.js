@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BsArrowReturnLeft} from 'react-icons/bs';
 import {
   DivAboutUsMainCS,
   DivBottomSearchBlockSC,
@@ -44,6 +45,12 @@ import {
   DivQBlock,
   UlSearch,
   LiSearch,
+  DivTextFrontSC,
+  DivSearchBlocksWrapFrontCS,
+  Divtoshow,
+  DivwithFront,
+  DivSearchMain0CS,
+  ButtonReturn,
 } from "../../styles/mainpage.styles";
 import Post from "./Post";
 import arrayPosts from "./arrayPosts";
@@ -117,13 +124,15 @@ const Mainpage = (props) => {
   
   return (
     <DivWrapMainCS>
-      <DivSearchMainCS>
+     <DivSearchMain0CS> 
+        {/* <Divtoshow> */}
         <DivSearchBlocksWrapCS>
           <DivLeftSearchBlockSC>
+            
             <DivSearchSC
               type="text"
               onChange={(event) => setValue(event.target.value)}
-            ></DivSearchSC>{" "}
+            ></DivSearchSC>
             <UlSearch isActive={value !== ""}>
               {value
                 ? filteredQs.map((item, i) => {
@@ -148,6 +157,7 @@ const Mainpage = (props) => {
               >
                 Русский
               </DivOptionLangs>
+              
               <DivOptionLangs
                 type="submit"
                 onClick={onChange2("learn")}
@@ -180,9 +190,12 @@ const Mainpage = (props) => {
           </DivRightSearchBlockSC>
           <DivBottomSearchBlockSC />
         </DivSearchBlocksWrapCS>
-      </DivSearchMainCS>
-
+        {/* </Divtoshow> */}
+      </DivSearchMain0CS>
       <DivRecentQMainCS>
+       
+      <DivSearchBlocksWrapFrontCS>
+       <DivTextFrontSC>Discover Languages</DivTextFrontSC></DivSearchBlocksWrapFrontCS>
         <DivRecQBlockCS>
           <DivRecQText>Последние вопросы</DivRecQText>
         </DivRecQBlockCS>

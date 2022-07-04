@@ -21,11 +21,14 @@ import {
   UlSearch,
   LiSearch,
   ALinkQ,
+  ButtonReturn,
 } from "../../styles/mainpage.styles";
 import Post from "./Post";
 import BoxCreatePost from "./BoxCreatePost";
 import arrayPosts from "./arrayPosts";
 import { useNavigate } from "react-router-dom";
+import { BsArrowReturnLeft } from "react-icons/bs";
+
 const Logged = (props) => {
   const [posts, getPosts] = useState([]);
   useEffect(() => {
@@ -239,6 +242,7 @@ const Logged = (props) => {
       </DivSearchMainCS>
 
       <DivRecentQMainCS>
+      
         <DivRecQBlockCS>
           <DivRecQText>Последние вопросы</DivRecQText>
         </DivRecQBlockCS>

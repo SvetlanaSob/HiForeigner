@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import {
+  ButtonReturn,
   DivBlackSignInBlockSC,
   DivSignInText2SC,
   DivSignInTextSC,
@@ -18,6 +19,7 @@ import {
 } from "../../styles/Sign.styles";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { BsArrowReturnLeft } from "react-icons/bs";
 
 const SignIn = (props) => {
   const [login, setLogin] = useState("");
@@ -90,6 +92,7 @@ const SignIn = (props) => {
           <DivTextSigninPage1SC>Sign in</DivTextSigninPage1SC>
           <DivBlackSignInBlockPageSC>
             <ImgBlockSignIn />
+          
             <DivSignInTextSC type="text" placeholder="Login" />
             <DivSignInText2SC type="text" placeholder="Password" />
             <DivSigninWordSC type="submit" onClick={isLogged}>
@@ -97,6 +100,7 @@ const SignIn = (props) => {
             </DivSigninWordSC>
             <DivSignupWord1SC to="/signup">Зарегистрироваться</DivSignupWord1SC>
           </DivBlackSignInBlockPageSC>
+          
         </DivSignInWrapCS>
       </DivSignMainCS>
     </>

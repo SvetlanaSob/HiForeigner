@@ -25,7 +25,7 @@ export const DivLinksSC = styled.div`
   grid-gap: 100px;
 `;
 
-export const LinkFooterSC = styled(Link)`
+export const LinkFooterSC = styled.a`
   text-decoration: none;
   font-family: "Playfair Display";
   font-style: normal;

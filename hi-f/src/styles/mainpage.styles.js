@@ -7,6 +7,7 @@ import Chats from "../image/chats.png";
 import Phone from "../image/phone.png";
 import { GoPrimitiveDot } from "react-icons/go";
 import Dots from "../image/dots.png";
+import { BsArrowReturnLeft} from 'react-icons/bs';
 
 export const DivWrapMainCS = styled.div`
   display: grid;
@@ -25,12 +26,39 @@ export const DivSearchMainCS = styled.div`
   width: auto;
   min-width: 1270px;
   background-size: 105%;
-  /* opacity: 80%; */
+ 
+ 
+  
+   /* opacity: 80%;  */
   margin-top: 100px;
-  transition: 3s;
+  transition: 1s;
   :hover {
     background-size: 100%;
+    
   }
+`;
+export const DivSearchMain0CS = styled.div`
+  background-image: url(${MainBack});
+
+  background-repeat: no-repeat;
+  background-position: center;
+  height: auto;
+  width: auto;
+  min-width: 1270px;
+  background-size: 105%;
+ 
+  filter: blur(6px) brightness(80%);
+  
+   /* opacity: 80%;  */
+  margin-top: 100px;
+  transition: 1s;
+  :hover {
+    background-size: 100%;
+    filter: blur(0px) brightness(100%);
+  }
+`;
+export const DivwithFront = styled.div`
+
 `;
 export const DivSearchBlocksWrapCS = styled.div`
   display: grid;
@@ -40,7 +68,17 @@ export const DivSearchBlocksWrapCS = styled.div`
   /* position: relative; */
   margin: 0 auto;
   margin-top: 100px;
-  // border: 2px solid yellow;
+  //border: 2px solid yellow;
+
+`;
+export const Divtoshow = styled.div`
+
+  border: 2px solid yellow;
+height: 700px;
+ 
+  opacity: 0;
+  transition: 1s;
+  :hover{opacity:1;}
 `;
 export const DivLeftSearchBlockSC = styled.div`
   z-index: 3;
@@ -97,6 +135,7 @@ export const DivTextLanguageSC = styled.h1`
   pointer-events: none;
 `;
 export const DivTextSearchSC = styled.h1`
+
   z-index: 3;
   display: grid;
   position: absolute;
@@ -276,6 +315,7 @@ export const DivRecQBlockCS = styled.div`
   //border: 2px solid blue;
 `;
 export const DivRecQText = styled.h1`
+
   pointer-events: none;
   display: grid;
   position: absolute;
@@ -1074,5 +1114,59 @@ export const ALinkQ = styled.a`
 export const buttonSC = styled.button`
 margin-left: 200px;
 border: 2px solid blue;
+
+`;
+export const DivTextFrontSC = styled.h1`
+  z-index: 5;
+  display: grid;
+  position: absolute;
+  font-family: "Lusitana";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 140.455px;
+  line-height: 208px;
+ 
+ 
+  color: rgba(255, 255, 255, 0.9);
+  /* border: 2px solid yellow; */
+  
+ 
+ margin-top: 50px;
+  pointer-events: none;
+  text-align: center;
+  text-shadow: 0px 16.0925px 16.7362px rgba(0, 0, 0, 0.25);
+  justify-self: center;
+
+  //border: 2px solid yellow; 
+
+`;
+export const DivSearchBlocksWrapFrontCS = styled.div` 
+
+ z-index: 6;
+  display: grid;
+  width: auto;
+  max-width: auto;
+  height:200px;
+  margin-top: -350px;
+  margin-bottom: 110px;
+ 
+  /* position: relative; */
+ 
+ // border: 2px solid RED;
+
+
+`;
+export const ButtonReturn = styled.button`
+
+
+height: 50px;
+width: 50px;
+border: none;
+cursor: pointer;
+background: none;
+margin-top: -50px;
+margin-left: -150px;
+justify-self: flex-start;
+//border: 2px solid RED;
 
 `;
